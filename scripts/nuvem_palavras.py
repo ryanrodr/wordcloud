@@ -29,7 +29,8 @@ def nuvem_palavras(text):
     plt.figure(figsize=(10, 5))
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis('off')
+    plt.savefig('../imagens/nuvem.png', dpi=150, bbox_inches='tight')
     plt.show()
-
+    
 text = str(input('Digite um texto: '))
 nuvem_palavras(text)
