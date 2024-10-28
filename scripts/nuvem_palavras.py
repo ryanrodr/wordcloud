@@ -21,7 +21,8 @@ def nuvem_palavras(text):
     # Gerar a nuvem de palavras com as palavras já tratadas
     wordcloud = WordCloud(width=800,
                           height=400,
-                          background_color='white',
+                          background_color='black',
+                          colormap='Purples',
                           max_words=200).generate(' '.join(palavras))
 
     # Configurar o tamanho da imagem e suavizar a exibição
