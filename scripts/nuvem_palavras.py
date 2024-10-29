@@ -4,11 +4,12 @@ import matplotlib.pyplot as plt
 import string
 import nltk
 nltk.download('stopwords', quiet=True)
+plt.switch_backend('TkAgg')
 
 def nuvem_palavras(text):
     """
-    Processa um texto em português, removendo pontuações e palavras comuns (stop words).
-    Gera e exibe uma nuvem de palavras, destacando visualmente as palavras mais frequentes.
+    Processa um texto em português, removendo pontuações e palavras comuns (stop words).    
+    Gera e exibe uma nuvem de palavras, destacando visualmente as palavras mais frequentes.   
     """
     stop_words = set(stopwords.words('portuguese'))
 
@@ -31,6 +32,6 @@ def nuvem_palavras(text):
     plt.axis('off')
     plt.savefig('../imagens/nuvem.png', dpi=150, bbox_inches='tight')
     plt.show()
-    
-text = str(input('Digite um texto: '))
+
+text = str(input('Adicione um texto para gerar a Nuvem: '))
 nuvem_palavras(text)
