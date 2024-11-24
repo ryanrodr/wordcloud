@@ -18,7 +18,7 @@ def nuvem_palavras(text, colormap):
     # Gerar a nuvem de palavras com as palavras já tratadas
     wordcloud = WordCloud(width=800,
                           height=400,
-                          background_color='black',
+                          background_color=background_color,
                           colormap=colormap,
                           max_words=max_words).generate(' '.join(palavras))
 
@@ -42,6 +42,8 @@ with tab1:
     colormap = st.selectbox("Escolha o colormap:", 
     ['Blues', 'Purples', 'viridis', 'plasma', 'inferno', 'magma', 'cividis'])
     
+    background_color = st.color_picker("Escolha a cor de fundo:", "#000000")
+
     max_words = st.slider("Número máximo de palavras na nuvem:", min_value=50, max_value=500, value=200, step=50)
 
     if st.button("Gerar Nuvem"):
